@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.stock.min.js"></script>
+
+
+
+<script type="text/javascript">
+
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=80%, initial-scale=1.0">
+    <title>IPC ALTERNATIVO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>IPC alternativo</h1>
+    </header>
+    
+    <main class="container">          
+        <div class="row">
+            <div class="col-12">
+                <h4>¿Quieres saber el verdadero coste de la vida? Descubre cómo nuestro índice de precios alternativo lo hace posible</h4>
+            </div>
+        </div>
+        <div id="divDeCarga" class="row">
+            <div class="col-12 text-center">
+                <div class="spinner-border text-primary me-2"></div>
+                <p class="d-inline-block">Cargando datos, por favor espera. Esto podría llevar un tiempo...</p>
+            </div>            
+        </div>
+        
+        <div id="divDeContenido" class="row d-flex justify-content-center d-none">
+            <div class="col-md-4 my-3">
+                <div class="card bg-light border-1 h-100">
+                    <div class="card-body">
+                        <h3>IPC del último mes</h3>
+                        <p>El IPC del mes de <span id="ultimoMes">...</span></p>
+                        <p><span class="display-4 font-weight-bold" id="ultimoIPC">.</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 my-3">
+                <div class="card bg-light border-1 h-100">
+                    <div class="card-body">
+                        <h3>IPC interanual</h3>
+                        <p>Variación del IPC de los últimos 12 meses</p>
+                        <!-- Si consigo hacer mi propia cesta, entonces en un lado el IPC del ultimo mes y de los ultimos 12 meses y a la derecha lo mismo pero del ipc alternativo y con otro color. -->
+                        <p><span class="display-4 font-weight-bold" id="ultimos12IPC">.</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 my-3">
+                <div class="card bg-light border-1 h-100">
+                    <div class="card-body">
+                        <h3>Nuestra gráfica de evolución del IPC en los últimos años</h3>
+                        <p>Observa y compara cómo ha subido el valor del IPC y cómo debería haber subido según nuestros cálculos.</p>
+                        <p>¿Te has preguntado alguna vez cómo se calcula el IPC? La respuesta es sorprendente: se elabora en base a una cesta de la compra promedio, incluyendo todo tipo de productos, desde los más caros a los más baratos. Sin embargo, ¿y si te dijera que el valor del IPC aumenta significativamente cuando solo se consideran los productos básicos? En este estudio hemos querido ir más allá y recoger solo aquellos productos que afectan de forma más inmediata al ciudadano, especialmente a las rentas más bajas. ¡Descubre con nosotros cómo estos productos tienen un impacto directo en tu día a día y cómo pueden influir en tus negociaciones sindicales!</p>
+                        <div id="chartContainer" style="height: 450px; width: 100%;"></div> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 my-3">
+                <div class="card bg-light border-1 h-100">
+                    <div class="card-body">
+                        <h3>Ponderación de subclases</h3>
+                        <p>El proceso de elaboración de los datos se basa en los precios actualizados de las siguientes 303 Subclases ECOICOP. A continuación, a la derecha de la tabla, encontrarás la ponderación de cada subclase dentro de la cesta, lo que indica cuánta cantidad representa.</p>
+                        <div class="btn-group" role="group" aria-label="Desmarcar todo o algunos">
+                            <button type="button" id="btnMarcarTodo" class="btn btn-secondary">Todos los productos</button>
+                            <button type="button" id="btnDesmarcar" class="btn btn-outline-secondary">Solamente los básicos</button>
+                        </div>
+
+                        <button class="btn btn-danger" id="favorite-btn"><i class="bi bi-heart-fill"></i> Favoritos (próximamente)</button>
+                          
+                        <div id="datos"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light">
+        <div class="container py-5">
+          <div class="row">
+            <div class="col-md-6">
+              <h5>Ejercicio DWEC04</h5>
+              <p>En mi proyecto he creado una web donde se puede observar la evolución del IPC y un indicador alternativo al que he llamado IPC alternativo.</p>
+            </div>
+            <div class="col-md-3">
+              <h5>Enlaces de interés</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Términos de uso</a></li>
+                <li><a href="#">Contacto</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <h5>Sígueme en las redes sociales</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col">
+              <p>Desarrollado por Álvaro Merino Maestre &copy; 2023</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    <script type="text/javascript" src="js/extractorDatosIPC.js"></script>
+    <script type="text/javascript" src="js/accionesBotones.js"></script>
+
+    <script>
+        window.onload(consultarDatos());
+    </script>
+</body>
+</html>

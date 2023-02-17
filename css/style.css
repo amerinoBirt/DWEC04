@@ -1,0 +1,57 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+
+
+/* h1 {
+    background-color: red;
+} */
+
+body {    
+    font-family: 'Noto Sans', sans-serif;
+    cursor:default;
+    background-color: #F5F5F5;
+}
+
+header {
+    text-align: center;
+    background-color: #1a237e;
+    color: white;
+    padding: 1rem;
+    margin-bottom: 5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+main div {
+    font-size: 1rem;
+    
+}
+
+h3 {
+    color: #1E90FF;
+}
+
+li {
+    margin-left: 3rem;
+    list-style-type: square;
+}
+
+.card {
+    background-color: white;
+}
+
+.card:hover .card-body {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#ultimo, #ultimos {
+    font-size: 5rem;
+}
+
+.fw-bold-shadow {
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-decoration: line-through;
+}
